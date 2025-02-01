@@ -6,6 +6,7 @@ dependencies:
   - pandas
   - openpyxl
   - xlsxwriter
+  - cf-units
 # for testing
   - pytest
   - pytest-cov

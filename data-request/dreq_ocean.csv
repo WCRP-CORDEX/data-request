@@ -1,0 +1,47 @@
+out_name,frequency,units,long_name,standard_name,cell_methods,priority,comment
+thetao,mon,degC,Sea Water Potential Temperature,sea_water_potential_temperature,area: mean where sea time: mean,CORE,"3D, potential temperature"
+so,mon,0.001,Sea Water Salinity,sea_water_salinity,area: mean where sea time: mean,CORE,"3D, practical salinity"
+uo,mon,m s-1,Sea Water X Velocity,sea_water_x_velocity,time: mean,CORE,"3D, positive: east"
+vo,mon,m s-1,Sea Water Y Velocity,sea_water_y_velocity,time: mean,CORE,"3D, postive: north"
+zos,mon,m,Sea Surface Height Above Geoid,sea_surface_height_above_geoid,area: mean where sea time: mean,CORE,"2D, the GCM zostoga variable should be added in the monthly file"
+zos,day,m,Sea Surface Height Above Geoid,sea_surface_height_above_geoid,area: mean where sea time: mean,CORE,"2D, the GCM zostoga variable should be added in the monthly file"
+tos,mon,degC,Sea Surface Temperature,sea_surface_temperature,area: mean where sea time: mean,CORE,2D
+tos,day,degC,Sea Surface Temperature,sea_surface_temperature,area: mean where sea time: mean,CORE,2D
+sos,mon,0.001,Sea Surface Salinity,sea_surface_salinity,area: mean where sea time: mean,CORE,2D
+sos,day,0.001,Sea Surface Salinity,sea_surface_salinity,area: mean where sea time: mean,CORE,2D
+mlotst,mon,m,Ocean Mixed Layer Thickness Defined by Sigma T,ocean_mixed_layer_thickness_defined_by_sigma_t,area: mean where sea time: mean,CORE,"2D, positive: down, Med-CORDEX: Use a criteria of 0.011 or 0.01 kg/m³ with a 10m-depth reference"
+mlotst,day,m,Ocean Mixed Layer Thickness Defined by Sigma T,ocean_mixed_layer_thickness_defined_by_sigma_t,area: mean where sea time: mean,CORE,"2D, positive: down, Med-CORDEX: Use a criteria of 0.011 or 0.01 kg/m³ with a 10m-depth reference"
+areacello,fx,m2,Grid-Cell Area for Ocean Variables,cell_area,area: sum,CORE,Horizontal area of ocean grid cells
+deptho,fx,m,Sea Floor Depth Below Geoid,sea_floor_depth_below_geoid,area: mean where sea,CORE,
+sftof,fx,%,Sea Area Percentage,sea_area_fraction,area: mean,CORE,Percentage of horizontal area occupied by ocean.
+thkcello,fx,m,Ocean Model Cell Thickness,cell_thickness,area: mean,CORE,
+volcello,fx,m3,Ocean Grid-Cell Volume,ocean_volume,area: sum,CORE,
+thetao,day,degC,Sea Water Potential Temperature,sea_water_potential_temperature,area: mean where sea time: mean,TIER1,"3D, potential temperature"
+wo,mon,m s-1,Sea Water Upward Velocity,upward_sea_water_velocity,area: mean where sea time: mean,TIER1,"3D, positive: up"
+rhop,mon,kg m-3,Sea Water Potential Density,sea_water_potential_density,area: mean where sea time: mean,TIER1,"3D, sigma0"
+hfds,mon,W m-2,Downward Heat Flux at Sea Water Surface,surface_downward_heat_flux_in_sea_water,area: mean where sea time: mean,TIER1,"2D, positive: down, This is the net flux of heat entering the liquid water column through its upper surface (excluding any ""flux adjustment"" ?)"
+hfds,day,W m-2,Downward Heat Flux at Sea Water Surface,surface_downward_heat_flux_in_sea_water,area: mean where sea time: mean,TIER1,"2D, positive: down, This is the net flux of heat entering the liquid water column through its upper surface (excluding any ""flux adjustment"" ?)"
+hfcorr,mon,W m-2,Heat Flux Correction,heat_flux_correction,area: mean where sea time: mean,TIER1,"2D, positive: down, if this does not vary from one year to the next, report only a single year. Positive indicates correction adds heat to ocean"
+hfcorr,day,W m-2,Heat Flux Correction,heat_flux_correction,area: mean where sea time: mean,TIER1,"2D, positive: down, if this does not vary from one year to the next, report only a single year. Positive indicates correction adds heat to ocean"
+rsntds,mon,W m-2,Net Downward Shortwave Radiation at Sea Water Surface,net_downward_shortwave_flux_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, positive: down, This is the flux into the surface of liquid sea water only. This excludes shortwave flux absorbed by sea ice, but include any light that passes through the ice and is absorbed by the ocean"
+rsntds,day,W m-2,Net Downward Shortwave Radiation at Sea Water Surface,net_downward_shortwave_flux_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, positive: down, This is the flux into the surface of liquid sea water only. This excludes shortwave flux absorbed by sea ice, but include any light that passes through the ice and is absorbed by the ocean"
+tauuo,mon,N m-2,Sea Water Surface Downward X Stress,downward_x_stress_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, positive: east"
+tauuo,day,N m-2,Sea Water Surface Downward X Stress,downward_x_stress_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, positive: east"
+tauvo,mon,N m-2,Sea Water Surface Downward Y Stress,downward_y_stress_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, postive: north"
+tauvo,day,N m-2,Sea Water Surface Downward Y Stress,downward_y_stress_at_sea_water_surface,area: mean where sea time: mean,TIER1,"2D, postive: north"
+uos,day,m s-1,Surface X Velocity,surface_eastward_sea_water_velocity,area: mean where sea time: mean,TIER1,"2D, positive east"
+vos,day,m s-1,Surface Y Velocity,surface_northward_sea_water_velocity,area: mean where sea time: mean,TIER1,"2D, positive north"
+wfo,mon,kg m-2 s-1,Water Flux into Sea Water,water_flux_into_sea_water,area: mean where sea time: mean,TIER1,"2D, positive: down, P+R-E+corrections"
+wfo,day,kg m-2 s-1,Water Flux into Sea Water,water_flux_into_sea_water,area: mean where sea time: mean,TIER1,"2D, positive: down, P+R-E+corrections"
+friver,mon,kg m-2 s-1,Water Flux into Sea Water from Rivers,water_flux_into_sea_water_from_rivers,area: mean where sea time: mean,TIER1,"2D, positive: down, computed as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell."
+friver,day,kg m-2 s-1,Water Flux into Sea Water from Rivers,water_flux_into_sea_water_from_rivers,area: mean where sea time: mean,TIER1,"2D, positive: down, computed as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell."
+wfonocorr,mon,kg m-2 s-1,Water Flux into Sea Water Without Flux Correction,water_flux_into_sea_water_without_flux_correction,area: mean where sea time: mean,TIER1,"2D, positive: down, Including runoff, without corrections"
+wfonocorr,day,kg m-2 s-1,Water Flux into Sea Water Without Flux Correction,water_flux_into_sea_water_without_flux_correction,area: mean where sea time: mean,TIER1,"2D, positive: down, Including runoff, without corrections"
+so,day,0.001,Sea Water Salinity,sea_water_salinity,area: mean where sea time: mean,TIER2,"3D, practical salinity, useful for BGC model forcing"
+uo,day,m s-1,Sea Water X Velocity,sea_water_x_velocity,area: mean where sea time: mean,TIER2,"3D, positive: east, useful for BGC model forcing"
+vo,day,m s-1,Sea Water Y Velocity,sea_water_y_velocity,area: mean where sea time: mean,TIER2,"3D, postive: north, useful for BGC model forcing"
+wo,day,m s-1,Sea Water Upward Velocity,upward_sea_water_velocity,area: mean where sea time: mean,TIER2,"3D, positive: up, useful for BGC model forcing"
+rhop,day,kg m-3,Sea Water Potential Density,sea_water_potential_density,area: mean where sea time: mean,TIER2,"3D, sigma0"
+difvho,day,m2 s-1,Vertical Eddy Diffusivity,ocean_vertical_heat_diffusivity,area: mean where sea time: mean,TIER2,"3D, useful for BGC model forcing"
+tos,1hr,degC,Sea Surface Temperature,sea_surface_temperature,area: mean where sea time: point,TIER2,2D
+tob,mon,degC,Sea Water Potential Temperature at Sea Floor,sea_water_potential_temperature_at_sea_floor,area: mean where sea time: mean,TIER2,2D
