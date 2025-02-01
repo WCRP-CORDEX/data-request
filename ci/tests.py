@@ -7,7 +7,16 @@ from .utils import cmor_tables, tables
 
 @pytest.mark.parametrize("dreq_file", tables)
 def test_no_duplicates(dreq_file):
-    """assert all entries of a data request are unique"""
+    """
+    Test that all entries in the data request file are unique.
+
+    Parameters:
+    dreq_file (str): Path to the data request file.
+
+    Asserts:
+    - All entries in the data request file are unique.
+    - All entries, except for the 'priority' column, are unique.
+    """
     dreq_df = pd.read_csv(dreq_file)
     assert dreq_df.loc[dreq_df.duplicated()].empty
     assert (
@@ -19,7 +28,15 @@ def test_no_duplicates(dreq_file):
 
 @pytest.mark.parametrize("dreq_file", tables)
 def test_all_in_cmor_tables(dreq_file):
-    """assert all entries of a data request are registered in the cmor tables"""
+    """
+    Test that all entries in the data request file are registered in the CMOR tables.
+
+    Parameters:
+    dreq_file (str): Path to the data request file.
+
+    Asserts:
+    - All entries in the data request file are registered in the CMOR tables.
+    """
     print(f"Checking if all entries exist in cmor table: {dreq_file}")
     cmor_df = pd.read_csv(cmor_tables)
     dreq_df = pd.read_csv(dreq_file).drop(columns="priority")
@@ -31,7 +48,7 @@ def test_all_in_cmor_tables(dreq_file):
     all_df["exists"] = np.where(all_df.exists == "both", True, False)
     if not all_df.exists.all():
         print(
-            f"!!!! There are some variables from {dreq_file} that do not exsits in cmor tables !!!!"
+            f"!!!! There are some variables from {dreq_file} that do not exist in cmor tables !!!!"
         )
         print(print(all_df[~all_df.exists]))
 
@@ -40,13 +57,13 @@ def test_all_in_cmor_tables(dreq_file):
 
 
 def test_all_positive_attrs_set():
-    """assert all positive attributes are set in the cmor tables
-
-    Check if standard name indicates a directional variable and the
-    positive attribute is set consistently.
-
     """
+    Test that all positive attributes are set correctly in the CMOR tables.
 
+    Asserts:
+    - All entries with standard names indicating an upward direction have 'positive' set to 'up'.
+    - All entries with standard names indicating a downward direction have 'positive' set to 'down'.
+    """
     up = ["outgoing", "upward", "upwelling"]
     down = ["incoming", "downward", "downwelling", "sinking"]
     df = pd.read_csv(cmor_tables)
